@@ -1,0 +1,55 @@
+name: sos_rs
+description: "A Flutter Project"
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.2.3 <4.0.0"
+
+dependencies:
+  # icons
+  cupertino_icons: ^1.0.2
+
+  # architecture
+  mobx: ^2.3.0+1
+  flutter_mobx: ^2.2.0+2
+  flutter_modular: ^6.3.2
+
+  # design system
+  google_fonts: 6.1.0
+  flutter_svg: ^2.0.10+1
+  sos_rs_design_system:
+    path: "../packages/sos_rs_design_system"
+
+  # flutter
+  flutter:
+    sdk: flutter
+  google_sign_in: ^6.2.1
+
+dev_dependencies:
+  mobx_codegen: ^2.6.0+1
+  build_runner: ^2.4.8
+
+  flutter_lints: ^2.0.0
+
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/background_images/login_background.png
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
