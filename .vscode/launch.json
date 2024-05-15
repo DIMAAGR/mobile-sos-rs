@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "application",
+            "cwd": "mobile\\frontend\\application",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "application (profile mode)",
+            "cwd": "mobile\\frontend\\application",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "application (release mode)",
+            "cwd": "mobile\\frontend\\application",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "sos_rs_design_system",
+            "cwd": "mobile\\frontend\\packages\\sos_rs_design_system",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "sos_rs_design_system (profile mode)",
+            "cwd": "mobile\\frontend\\packages\\sos_rs_design_system",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "sos_rs_design_system (release mode)",
+            "cwd": "mobile\\frontend\\packages\\sos_rs_design_system",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

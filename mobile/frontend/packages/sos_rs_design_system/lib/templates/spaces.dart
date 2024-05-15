@@ -14,8 +14,8 @@ class Spaces extends StatelessWidget {
     required this.size,
   })  : isFill = false,
         flex = 1,
-        isHeight = true,
-        isWidth = false;
+        isHeight = false,
+        isWidth = true;
 
   const Spaces.fill({
     this.flex = 1,
@@ -23,7 +23,7 @@ class Spaces extends StatelessWidget {
   })  : isFill = true,
         size = 0,
         isHeight = true,
-        isWidth = false;
+        isWidth = true;
 
   final bool isFill;
   final bool isHeight;

@@ -9,19 +9,29 @@ class DashboardView extends StatefulWidget {
 }
 
 class _DashboardViewState extends State<DashboardView> {
-  void _onLoginPressed() {}
-  void _onForgotPasswordPressed() {}
-  void _onSignupPressed() {}
+  final TextEditingController searchController = TextEditingController();
 
-  final Map<String, TextEditingController> _textControllers = {
-    'email': TextEditingController(),
-    'password': TextEditingController(),
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  void _onAddPressed() {}
+  void _onSearch(String? data) {}
+  void _onItemSelected(String? category, String? value) {}
+
+  Map<String, List<String>> itemStatus = {
+    'Status': ['Status do item no abrigo', 'Disponível para doação', 'Precisa', 'Necessita Urgente']
   };
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AtomAppBar(title: 'SOS Rio Grande do Sul'),
+    return DashboardTemplate(
+      onAddPressed: _onAddPressed,
+      onSearch: _onSearch,
+      searchController: searchController,
+      categories: [itemStatus],
+      onItemSelected: _onItemSelected,
     );
   }
 }

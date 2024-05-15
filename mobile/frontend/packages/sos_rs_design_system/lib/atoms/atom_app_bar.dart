@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sos_rs_design_system/consts/colors.dart';
+import 'package:sos_rs_design_system/atoms/atom_colors.dart';
 import 'package:sos_rs_design_system/themes_and_styles/text_theme.dart';
 
 class AtomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -11,7 +11,7 @@ class AtomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: AppColors.appBar,
+      backgroundColor: AtomColors.appBar,
       foregroundColor: Colors.white,
       elevation: 0,
       actions: actions,

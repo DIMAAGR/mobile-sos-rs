@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:sos_rs_design_system/themes_and_styles/text_theme.dart';
+
+import 'atom_colors.dart';
 
 class AtomTextFormField extends StatelessWidget {
   final double? width;
@@ -32,42 +34,40 @@ class AtomTextFormField extends StatelessWidget {
     this.foregroundColor,
   });
 
-  final defaultForegroundColor = const Color(0xFF656367);
-  final defaultBackgroundColor = const Color(0xFFEDEBEF);
-
-  BoxDecoration get _decoration => BoxDecoration(
-        color: backgroundColor ?? defaultBackgroundColor,
-        borderRadius: borderRadius ?? BorderRadius.circular(16),
+  InputBorder get _inputBorder => OutlineInputBorder(
+        borderSide: BorderSide(color: foregroundColor ?? AtomColors.defaultBorderColor, width: 2),
+        borderRadius: borderRadius ?? BorderRadius.circular(8),
       );
 
-  TextStyle get _style => GoogleFonts.montserrat(
-        fontSize: 16,
-        color: foregroundColor ?? defaultForegroundColor,
+  InputBorder get _focusedInputBorder => OutlineInputBorder(
+        borderSide: BorderSide(color: foregroundColor ?? Colors.black, width: 2),
+        borderRadius: borderRadius ?? BorderRadius.circular(8),
       );
 
   InputDecoration get _inputDecoration => InputDecoration(
-        border: InputBorder.none,
+        contentPadding: const EdgeInsets.symmetric( horizontal: 16),
+        fillColor: backgroundColor ?? AtomColors.defaultBackgroundColor,
+        focusedBorder: _focusedInputBorder,
+        enabledBorder: _inputBorder,
+        border: _inputBorder,
         hintText: hintText,
+        filled: true,
         prefixIcon: prefixIcon == null
             ? null
             : Icon(
                 prefixIcon,
-                color: foregroundColor ?? defaultForegroundColor,
+                size: 22,
+                color: foregroundColor ?? AtomColors.defaultForegroundColor,
               ),
-        contentPadding: const EdgeInsets.symmetric(vertical: 9),
       );
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 48,
-      decoration: _decoration,
-      width: MediaQuery.of(context).size.width,
-      margin: margin ?? const EdgeInsets.all(16),
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      child: Center(
+    return Center(
+      child: SizedBox(
+        width: width,
         child: TextFormField(
-          style: _style,
+          style: AppTextStyle.textFormField(foregroundColor ?? AtomColors.defaultTextColor),
           onSaved: onSaved,
           onChanged: onChanged,
           controller: controller,
